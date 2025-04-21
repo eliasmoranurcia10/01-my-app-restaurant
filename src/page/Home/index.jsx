@@ -4,6 +4,7 @@ import SeccionMenu from "../../components/SeccionMenu";
 import SeccionPlatosALaCarta from "../../components/SeccionPlatosALaCarta";
 import SeccionPostres from "../../components/SeccionPostres";
 import SeccionBebidas from "../../components/SeccionBebidas";
+import SeccionNoEncontrado from "../../components/SeccionNoEncontrado";
 import SeccionDelivery from "../../components/SeccionDelivery";
 import SeccionAbout from "../../components/SeccionAbout";
 import SeccionTestimonios from "../../components/SeccionTestimonios";
@@ -19,6 +20,7 @@ const Home = () => {
             <SeccionPlatosALaCarta />
             <SeccionPostres />
             <SeccionBebidas />
+            <SeccionNoEncontrado />
             <SeccionDelivery />
             <SeccionAbout />
             <SeccionTestimonios />

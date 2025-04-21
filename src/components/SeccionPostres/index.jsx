@@ -1,20 +1,32 @@
+import { useContext } from "react";
+import { RestaurantContext } from "../../Context";
+import CardMenu from "../CardMenu";
+import LayoutSeccion from "../Layouts/LayoutSeccion";
 
 const SeccionPostres = () => {
-    return (
-        <>  
-            <section id="postres" className="py-10">
-            <h2 className="text-3xl font-bold text-center mb-6">Nuestros Postres Más Populares</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
-                {/*menuItems.slice(0, 3).map(item => (
-                <MenuCard key={item.id} item={item} />
-                ))*/}
-            </div>
-            <div className="text-center mt-6">
-                <button className="btn btn-secondary">Ver más</button>
-            </div>
-            </section>
-        </>
-    )
+
+    const postresItems = useContext(RestaurantContext);
+    const titleSection = "Nuestros Postres Más Populares";
+
+    if(postresItems.postresFiltrados?.length > 0) {
+        return (
+            <>  
+                <section id="postres" className="py-10" >
+                    
+                    <LayoutSeccion tituloSeccion={titleSection}>
+                        
+                        {
+                            postresItems.postresFiltrados?.map((postreitem, index) => (
+                                <CardMenu key={index} data={postreitem} />
+                            ))
+                        }
+
+                    </LayoutSeccion>
+                    
+                </section>
+            </>
+        )
+    }
 }
 
 export default SeccionPostres;
